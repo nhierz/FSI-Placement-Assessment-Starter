@@ -1,7 +1,7 @@
 // HINT: You can delete this console.log after you no longer need it!
 console.log('JavaScript code has loaded!')
 // First, tell us your name
-let yourName = "Jane Doe" // HINT: Replace this with your own name!
+let yourName = "Nhi Tran" // HINT: Replace this with your own name!
 
 // We'll use these variables to track the counts of each cookie type
 let gb = 0 // Gingerbread
@@ -18,6 +18,8 @@ credit.textContent = `Created by ${yourName}`
 
 // Event listener for clicks on the "+" button for Gingerbread cookies
 gbPlusBtn.addEventListener('click', function() {
+    quantity++
+    updateQuantity(`Quantity: ${quantity}`)
 // HINT: You can delete this console.log after you no longer need it!
 console.log('Gingerbread + button was clicked!')
 
