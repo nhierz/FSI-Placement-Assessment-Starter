@@ -33,23 +33,8 @@ let totalQty = document.querySelector('#qty-total');
 
 
 
-
-
-//gingerbread ADD button
-let gbAdd = document.createElement("button");
-gbAdd.textContent = '+';
-console.log ("button added");
-gbPlusBtn.append(gbAdd)
-
-//gingerbread MINUS button
-let gbMinus = document.createElement("button");
-gbMinus.textContent = '-';
-console.log ("button added");
-gbMinusBtn.append(gbMinus)
-
-
-
-// Event listener for clicks on the "+" button for Gingerbread cookies
+//Gingerbread cookie
+// '+' gingerbread cookie click
 gbPlusBtn.addEventListener('click', function() {
     gb = gb + 1;
 
@@ -62,8 +47,10 @@ console.log('Gingerbread + button was clicked!')
 
 //'-' Gingerbread cookie click
 gbMinusBtn.addEventListener('click', function() {
-    gb = gb - 1;
-
+    if (gb >= 1){
+        gb = gb - 1;
+    } else {gb = 0}
+    
     gbQty.textContent = gb;
     totalQty.textContent = gb + cc + sugar;
 
@@ -73,22 +60,7 @@ console.log('Gingerbread - button was clicked!')
 
 //chocolate chip cookie
 
-
-//chocolate chip ADD button
-let ccAdd = document.createElement("button");
-ccAdd.textContent = '+';
-console.log ("button added");
-ccPlusBtn.append(ccAdd)
-
-//chocolate chip MINUS button
-let ccMinus = document.createElement("button");
-ccMinus.textContent = '-';
-console.log ("button added");
-ccMinusBtn.append(ccMinus)
-
-
-
-// Event listener for clicks on the "+" button for Gingerbread cookies
+// '+' chocolate chip cookie click
 ccPlusBtn.addEventListener('click', function() {
     cc = cc + 1;
 
@@ -101,7 +73,9 @@ console.log('chocolate chip + button was clicked!')
 
 //'-' chocolate chip cookie click
 ccMinusBtn.addEventListener('click', function() {
-    cc = cc - 1;
+    if (cc >=1){
+        cc = cc - 1;
+    } else {sugar = 0}
 
     ccQty.textContent = cc;
     totalQty.textContent = gb + cc + sugar;
@@ -113,7 +87,27 @@ console.log('chocolate chip - button was clicked!')
 
 //sugar cookie
 
+// '+' sugar cookie click
+sugarPlusBtn.addEventListener('click', function() {
+    sugar = sugar + 1;
 
+    sugarQty.textContent = sugar;
+    totalQty.textContent = gb + cc + sugar;
 
+console.log('sugar cookie + button was clicked!')
 
-// TODO: Hook up event listeners for the rest of the buttons
+})
+
+//'-' sugar cookie click
+sugarMinusBtn.addEventListener('click', function() {
+    if (sugar >= 1){
+        sugar = sugar - 1;
+        
+    } else {sugar = 0}
+    
+    sugarQty.textContent = sugar;
+    totalQty.textContent = gb + cc + sugar;
+
+console.log('sugar cookie - button was clicked!')
+
+})
